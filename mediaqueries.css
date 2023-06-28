@@ -132,6 +132,18 @@
         font-size: 20px;
     }
 
+            /* AUTORES */
+
+    .autores__container {
+        max-width: 95%;
+    }
+
+            /* CONTACTO */
+
+    .contacto__grid {
+        width: 95%;
+    }
+
             /* FOOTER */
 
     .footer__links {

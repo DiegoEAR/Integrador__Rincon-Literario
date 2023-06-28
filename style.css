@@ -43,6 +43,8 @@ header img {
     align-items: center;
     gap: 30px;
     height: calc(100vh - 65px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .cart::-webkit-scrollbar{
@@ -58,7 +60,7 @@ header img {
     gap: 10px;
     padding-left: 10px;
     padding-right: 24px;
-    max-width: 100%;
+    width: 200px;
     border: 1px solid #1F271B;
     align-items: center;
     justify-content: space-between;
