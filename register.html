@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="animaciones.css">
+    <title>Crear Cuenta</title>
+</head>
+<body>
+    <header>
+        <img src="./img/Logo.png" alt="Logo">
+        <nav class="navBar">
+            <label for="menu__toggle" class="menu__label">
+                <img src="./img/align-justify.svg" alt="Imagen Menu">
+            </label>
+            <input type="checkbox" id="menu__toggle">
+            <ul class="navbar__list">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./index.html?#autores">Autores</a></li>
+                <li><a href="./index.html?#libros">Libros</a></li>
+                <li><a href="./index.html?#contacto">Contacto</a></li>
+                <li><a href="./login.html">Iniciar Sesión</a></li>
+                <li><a href="./register.html"> Registrarse</a></li>
+            </ul>
+                    <!-- Icono Carrito + Toggle  -->
+            <label for="cart__toggle" class="cart__label">
+                <img src="./img/Cart.png" alt="Carrito de compras" class="cart__icon">
+            </label>
+            <input type="checkbox" id="cart__toggle">
+                    <!-- Carrito + Item -->
+            <div class="cart">
+                <h2>- Carrito -</h2>
+                <div class="cart__item">
+                    <img src="./img/Autores/StephenKing/MrMercedes.jpg" alt="Imagen Libro">
+                    <div class="item__info">
+                        <h3>MR. MERCEDES</h3>
+                        <span>$8000</span>
+                    </div>
+                    <div class="item__quantity__container">
+                        <span class="quantity down">-</span> 
+                        <span class="item__quantity">1</span>
+                        <span class="quantity up">+</span>
+                    </div>
+                </div>
+                <div class="cart__item">
+                    <img src="./img/Autores/RickRiordan/LaPiramideRoja.png" alt="Imagen Libro">
+                    <div class="item__info">
+                        <h3>LA PIRAMIDE ROJA</h3>
+                        <span>$7500</span>
+                    </div>
+                    <div class="item__quantity__container">
+                        <span class="quantity down">-</span> 
+                        <span class="item__quantity">1</span>
+                        <span class="quantity up">+</span>
+                    </div>
+                </div>
+                <button>Finalizar Compra</button>
+            </div>
+            <div class="overlay"> </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="register">
+            <div class="register__container">
+                <h2>Crear Cuenta</h2>
+                <form class="register__form">
+                    <label for="nombre">Nombre y Apellido:</label>
+                    <input type="text" placeholder="   Juan Martinez" id="nombre">
+                    <label for="email">Email:</label>
+                    <input type="text" placeholder="   example@gmail.com" id="email">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" placeholder="   1123445567" id="telefono">
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña">
+                    <label for="confirmar">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmar">
+                    <button>Crear Cuenta</button>
+                </form>
+                <div class="unlogin">
+                    <p>¿Ya tenés cuenta?</p>
+                    <a href="./login.html">Inicia Sesión</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <ul class="footer__links">
+                <li><a href="#">Términos de Uso</a></li>
+                <li><a href="#">Trabajá con Nosotros</a></li>
+                <li><a href="#">Soporte</a></li>
+            </ul>
+        </div>
+        <p>Hecho por <span>DiegoEAR</span></p>
+    </footer>
+</body>
+</html>

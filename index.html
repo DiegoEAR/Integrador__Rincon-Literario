@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="animaciones.css">
+    <title>Rincón Literario</title>
+</head>
+<body>
+    <header>
+        <img src="./img/Logo.png" alt="Logo">
+        <nav class="navBar">
+            <label for="menu__toggle" class="menu__label">
+                <img src="./img/align-justify.svg" alt="Imagen Menu">
+            </label>
+            <input type="checkbox" id="menu__toggle">
+            <ul class="navbar__list">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="#autores">Autores</a></li>
+                <li><a href="#libros">Libros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="./login.html">Iniciar Sesión</a></li>
+                <li><a href="./register.html"> Registrarse</a></li>
+            </ul>
+                    <!-- Icono Carrito + Toggle  -->
+            <label for="cart__toggle" class="cart__label">
+                <img src="./img/Cart.png" alt="Carrito de compras" class="cart__icon">
+            </label>
+            <input type="checkbox" id="cart__toggle">
+                    <!-- Carrito + Item -->
+            <div class="cart">
+                <h2>- Carrito -</h2>
+                <div class="cart__item">
+                    <img src="./img/Autores/StephenKing/MrMercedes.jpg" alt="Imagen Libro">
+                    <div class="item__info">
+                        <h3>MR. MERCEDES</h3>
+                        <span>$8000</span>
+                    </div>
+                    <div class="item__quantity__container">
+                        <span class="quantity down">-</span> 
+                        <span class="item__quantity">1</span>
+                        <span class="quantity up">+</span>
+                    </div>
+                </div>
+                <div class="cart__item">
+                    <img src="./img/Autores/RickRiordan/LaPiramideRoja.png" alt="Imagen Libro">
+                    <div class="item__info">
+                        <h3>LA PIRAMIDE ROJA</h3>
+                        <span>$7500</span>
+                    </div>
+                    <div class="item__quantity__container">
+                        <span class="quantity down">-</span> 
+                        <span class="item__quantity">1</span>
+                        <span class="quantity up">+</span>
+                    </div>
+                </div>
+                <button>Finalizar Compra</button>
+            </div>
+            <div class="overlay"> </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section id="hero">
+                <div class="hero__container">
+                    <div class="hero__containter__text">
+                        <h1>Rincón Literario</h1>
+                        <p>Entra en un mundo de fascinación y descubre el poder de las palabras en Rincón Literario. Sumérgete en relatos cautivadores, déjate llevar por la imaginación y encuentra inspiración en cada página. Bienvenido a un espacio donde los libros cobran vida y las emociones se entrelazan en cada línea. ¡Prepárate para una aventura literaria inolvidable!</p>
+                    </div>
+                    <img src="./img/livingIMG.png" alt="Imagen Living">
+                </div>
+
+        </section>
+
+
+        <!-- AUTORES -->
+        <section id="autores">
+            <div class="categorias__text">
+                <h2>Autores</h2>
+                <img src="./img/librosIMG.png" alt="">
+            </div>
+            <div class="autores__container">
+                
+                <div class="card__autor">
+                    <img class="autorIMG" src="./img/Autores/StephenKing/StephenKing.png" alt="Foto Autor">
+                    <div class="card__autor__text">
+                        <h3>Stephen King</h3>
+                        <p>Maestro del terror y suspenso, Stephen King ha cautivado a los lectores con su imaginación inquietante y personajes memorables en novelas como "El resplandor" y "It".</p>
+                    </div>
+                </div>
+
+                <div class="card__autor">
+                    <img class="autorIMG" src="./img/Autores/AliceKellen/AliceKellen.jpg" alt="Foto Autor">
+                    <div class="card__autor__text">
+                        <h3>Alice Kellen</h3>
+                        <p> Con su pluma romántica, Alice Kellen ha conquistado a los lectores con historias llenas de emociones, segundas oportunidades y personajes que te roban el corazón.</p>
+                    </div>
+                </div>
+
+                <div class="card__autor">
+                    <img class="autorIMG" src="./img/Autores/MarieLu/MarieLu.png" alt="Foto Autor">
+                    <div class="card__autor__text">
+                        <h3>Marie Lu</h3>
+                        <p>Marie Lu es una autora de literatura juvenil y ciencia ficción que transporta a los lectores a mundos distópicos con tramas llenas de acción, dilemas morales y personajes complejos.</p>
+                    </div>
+                </div>
+
+                <div class="card__autor">
+                    <img class="autorIMG" src="./img/Autores/LeighBerdugo/LeighBerdugo.jpg" alt="Foto Autor">
+                    <div class="card__autor__text">
+                        <h3>Leigh Berdugo</h3>
+                        <p>Con su prosa evocadora, Leigh Bardugo crea universos de fantasía oscura donde los lectores se sumergen en intrigas, magia y personajes inolvidables en series como "Grisha" y "Seis de cuervos".</p>
+                    </div>
+                </div>
+
+                <div class="card__autor">
+                    <img class="autorIMG" src="./img/Autores/RickRiordan/RickRiordan.jpg" alt="Foto Autor">
+                    <div class="card__autor__text">
+                        <h3>Rick Riordan</h3>
+                        <p> En su narrativa divertida y llena de aventuras, Rick Riordan ha cautivado a jóvenes y adultos por igual con sus series de mitología moderna, como "Percy Jackson" y "Los héroes del Olimpo".</p>
+                    </div>
+                </div>
+
+                <div class="card__autor">
+                    <img class="autorIMG" src="./img/Autores/RobinCook/RobinCook.png" alt="Foto Autor">
+                    <div class="card__autor__text">
+                        <h3>Robin Cook</h3>
+                        <p>Conocido como el maestro del thriller médico, Robin Cook mezcla suspense y medicina en sus novelas, explorando temas de ética, avances científicos y peligros en la medicina moderna.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LIBROS -->
+        <section id="libros">
+            <div class="menu__categorias">
+                <div class="categorias__text">
+                    <h2>Tienda</h2>
+                    <img src="./img/librosIMG.png" alt="">
+                </div>
+                <div class="categorias">
+                    <button class="categoria"><p>Todos</p></button>
+                    <button class="categoria"><p>Stephen King</p></button>
+                    <button class="categoria"><p>Alice Kellen</p></button>
+                    <button class="categoria"><p>Marie Lu</p></button>
+                    <button class="categoria"><p>Leigh Berdugo</p></button>
+                    <button class="categoria"><p>Robin Cook</p></button>
+                    <button class="categoria"><p>Rick Riordan</p></button>
+                </div>
+            </div>
+
+            <div class="libros__cards__container">
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/RickRiordan/MagnusChase.png" alt="Portada Libro">
+                    <h3>MAGNUS CHASE</h3>
+                    <div class="card__text">
+                        <p>$8000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/AliceKellen/ElMapaDeLosAnhelos.png" alt="Portada Libro">
+                    <h3>EL MAPA DE LOS ANHELOS</h3>
+                    <div class="card__text">
+                        <p>$7500</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/StephenKing/Bajoeldomo.png" alt="Portada Libro">
+                    <h3>BAJO EL DOMO</h3>
+                    <div class="card__text">
+                        <p>$9000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/LeighBerdugo/ElReyMarcado.png" alt="Portada Libro">
+                    <h3>EL REY MARCADOS</h3>
+                    <div class="card__text">
+                        <p>$8000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/MarieLu/Legend.jpeg" alt="Portada Libro">
+                    <h3>LEGEND</h3>
+                    <div class="card__text">
+                        <p>$7500</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/LeighBerdugo/SeisDeCuervos.jpg" alt="Portada Libro">
+                    <h3>SEIS DE CUERVOS</h3>
+                    <div class="card__text">
+                        <p>$8000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/RickRiordan/PercyJackson.png" alt="Portada Libro">
+                    <h3>PERCY JACKSON</h3>
+                    <div class="card__text">
+                        <p>$9000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/AliceKellen/NosotrosEnLaLuna.jpg" alt="Portada Libro">
+                    <h3>NOSOTROS EN LA LUNA</h3>
+                    <div class="card__text">
+                        <p>$7500</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/StephenKing/It.png" alt="Portada Libro">
+                    <h3>IT (ESO)</h3>
+                    <div class="card__text">
+                        <p>$9000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/LeighBerdugo/ElLenguajeDeLasEspinas.jpg" alt="Portada Libro">
+                    <h3>EL LENGUAJE DE LAS ESPINAS</h3>
+                    <div class="card__text">
+                        <p>$8000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/RickRiordan/LaPiramideRoja.png" alt="Portada Libro">
+                    <h3>LA PIRÁMIDE ROJA</h3>
+                    <div class="card__text">
+                        <p>$7500</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/MarieLu/Warcross.jpg" alt="Portada Libro">
+                    <h3>WARCROSS</h3>
+                    <div class="card__text">
+                        <p>$8000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/AliceKellen/ElMapaDeLosAnhelos.png" alt="Portada Libro">
+                    <h3>EL MAPA DE LOS ANHELOS</h3>
+                    <div class="card__text">
+                        <p>$9000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/StephenKing/MrMercedes.jpg" alt="Portada Libro">
+                    <h3>MR. MERCEDES</h3>
+                    <div class="card__text">
+                        <p>$8000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/MarieLu/Skyhunter.png" alt="Portada Libro">
+                    <h3>SKYHUNTER</h3>
+                    <div class="card__text">
+                        <p>$7500</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="libroIMG" src="./img/Autores/StephenKing/Carrie.png" alt="Portada Libro">
+                    <h3>CARRIE</h3>
+                    <div class="card__text">
+                        <p>$9000</p>
+                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <div class="categorias__text">
+                <h2>Contacto</h2>
+                <img src="./img/librosIMG.png" alt="">
+            </div>
+            <div class="contacto__grid">
+                <div class="contacto__newsletter">
+                    <h4>¿Suscribirse a nuestro Newsletter?</h4>
+                    <p> Recibe las últimas novedades literarias, recomendaciones de libros, entrevistas con autores, promociones especiales y noticias sobre eventos literarios.</p>
+                    <div class="contacto__newsletter__input">
+                        <input type="email" placeholder="   example@gmail.com">
+                        <button >Suscribirse!</button>
+                    </div>
+                </div>
+                <div class="contacto__redes">
+                    <h4>¡Comunicate en nuestras redes sociales!</h4>
+                    <div class="contacto__redes__logos">                    
+                        <a href="https://www.instagram.com/" target="_blank"><img src="./img/instagram-circle.svg" alt="Logo Instagram"></a>
+                        <a href="https://www.facebook.com/" target="_blank"><img src="./img/facebook-circle.svg" alt="Logo Facebook"></a>
+                        <a href="https://web.whatsapp.com/" target="_blank"><img src="./img/whatsapp-circle.svg" alt="Logo Whatsapp"></a>
+                    </div>
+                </div>
+                <form class="contacto__form">
+                    <h4>Contáctanos</h4>
+                    <label class="label_1" for="nombre">Nombre completo:</label>
+                    <input class="input_1" type="text" placeholder="   Ingrese su nombre" id="nombre">
+                    
+                    <label class="label_1" for="numero">Número de teléfono:</label>
+                    <input class="input_1" type="number" id="numero" placeholder="   1124134657">
+                    
+                    <label class="label_1" for="mail">Email:</label>
+                    <input class="input_1" type="email" id="mail" placeholder="   example@gmail.com">
+                    
+                    <textarea class="input_2" id="notas" cols="30" rows="10" placeholder="   Notas adicionales de contacto..."></textarea>
+                    
+                    <span><input type="checkbox" id="newsletter"><label class="label_1" for="newsletter">Acepta suscribirse a nuestro Newsletter?</label>
+                    </span>
+                    
+                    <button class="input_1">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>
+            <ul class="footer__links">
+                <li><a href="#">Términos de Uso</a></li>
+                <li><a href="#">Trabajá con Nosotros</a></li>
+                <li><a href="#">Soporte</a></li>
+            </ul>
+        </div>
+        <p>Hecho por <span>DiegoEAR</span></p>
+    </footer>
+</body>
+</html>

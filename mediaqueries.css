@@ -1,0 +1,142 @@
+/* TABLET */
+
+@media (max-width: 1270px) {
+            /* NAVBAR */
+    .navbar__list {
+        position: absolute;
+        top: 41px;
+        left: 15%;
+        right: 5%;
+        width: 80%;
+        flex-direction: column;
+        background-color: #DCC7BE;
+        border: 1px solid #1F271B;
+        border-top: none;
+        border-radius: 0 0 1rem 1rem;
+        align-items: center;
+        padding: 30px;
+        gap: 30px;
+        z-index: 2;
+        display: none;
+    }
+
+    .menu__label {
+        display: flex;
+    }
+
+    #menu__toggle:checked + .navbar__list {
+        display: flex;
+    }
+
+    .menu__label a{
+        font-size: 28px;
+        font-weight: 800;
+    }
+
+            /* HERO */
+
+    .hero__container img{
+        display: none;
+    }
+
+    .hero__container {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .hero__containter__text{
+        max-width: 90%;
+        align-items: center;
+    }
+
+    .hero__containter__text h1 {
+        font-size: 48px;
+        max-width: 100%;
+    }
+
+    .hero__containter__text p {
+        font-size: 24px;
+    }
+
+            /* LIBROS */
+
+    .contacto {
+        max-width: 390px;
+    }
+
+            /* CONTACTO */
+
+    .contacto__form {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        max-width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .contacto__newsletter {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        max-width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .contacto__redes {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        max-width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .contacto__grid {
+        width: 80%;
+    }
+
+}
+
+
+/* MOBIL */
+
+@media (max-width: 675px) {
+            /* HERO */
+
+    #hero {
+        margin-top: 40px;
+    }
+
+            /* LOGIN / REGISTER */
+
+    .login__container,
+    .register__container {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 466px) {
+            /* HERO */
+
+    .hero__containter__text h1 {
+        font-size: 38px;
+    }
+
+    .login__form label,
+    .register__form label {
+        font-size: 20px;
+    }
+
+            /* FOOTER */
+
+    .footer__links {
+        flex-direction: column;
+        gap: 1px;
+    }
+
+}
