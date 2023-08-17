@@ -16,10 +16,10 @@
     <header>
         <img src="./img/Logo.png" alt="Logo">
         <nav class="navBar">
-            <label for="menu__toggle" class="menu__label">
+            <label class="menu__label">
                 <img src="./img/align-justify.svg" alt="Imagen Menu">
             </label>
-            <input type="checkbox" id="menu__toggle">
+
             <ul class="navbar__list">
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="#autores">Autores</a></li>
@@ -28,38 +28,18 @@
                 <li><a href="./login.html">Iniciar Sesión</a></li>
                 <li><a href="./register.html"> Registrarse</a></li>
             </ul>
+
                     <!-- Icono Carrito + Toggle  -->
-            <label for="cart__toggle" class="cart__label">
+            <label class="cart__label">
                 <img src="./img/Cart.png" alt="Carrito de compras" class="cart__icon">
             </label>
-            <input type="checkbox" id="cart__toggle">
                     <!-- Carrito + Item -->
             <div class="cart">
                 <h2>- Carrito -</h2>
-                <div class="cart__item">
-                    <img src="./img/Autores/StephenKing/MrMercedes.jpg" alt="Imagen Libro">
-                    <div class="item__info">
-                        <h3>MR. MERCEDES</h3>
-                        <span>$8000</span>
-                    </div>
-                    <div class="item__quantity__container">
-                        <span class="quantity down">-</span> 
-                        <span class="item__quantity">1</span>
-                        <span class="quantity up">+</span>
-                    </div>
+                <div class="cart__container">
+
                 </div>
-                <div class="cart__item">
-                    <img src="./img/Autores/RickRiordan/LaPiramideRoja.png" alt="Imagen Libro">
-                    <div class="item__info">
-                        <h3>LA PIRAMIDE ROJA</h3>
-                        <span>$7500</span>
-                    </div>
-                    <div class="item__quantity__container">
-                        <span class="quantity down">-</span> 
-                        <span class="item__quantity">1</span>
-                        <span class="quantity up">+</span>
-                    </div>
-                </div>
+
                 <button>Finalizar Compra</button>
             </div>
             <div class="overlay"> </div>
@@ -150,163 +130,21 @@
                     <img src="./img/librosIMG.png" alt="">
                 </div>
                 <div class="categorias">
-                    <button class="categoria"><p>Todos</p></button>
-                    <button class="categoria"><p>Stephen King</p></button>
-                    <button class="categoria"><p>Alice Kellen</p></button>
-                    <button class="categoria"><p>Marie Lu</p></button>
-                    <button class="categoria"><p>Leigh Berdugo</p></button>
-                    <button class="categoria"><p>Robin Cook</p></button>
-                    <button class="categoria"><p>Rick Riordan</p></button>
+                    <button class="categoria active">Todos</button>
+                    <button class="categoria" data-autor="Stephen King">Stephen King</button>
+                    <button class="categoria" data-autor="Alice Kellen">Alice Kellen</button>
+                    <button class="categoria" data-autor="Marie Lu">Marie Lu</button>
+                    <button class="categoria" data-autor="Leigh Bardugo">Leigh Bardugo</button>
+                    <button class="categoria" data-autor="Robin Cook">Robin Cook</button>
+                    <button class="categoria" data-autor="Rick Riordan">Rick Riordan</button>
                 </div>
             </div>
 
             <div class="libros__cards__container">
 
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/RickRiordan/MagnusChase.png" alt="Portada Libro">
-                    <h3>MAGNUS CHASE</h3>
-                    <div class="card__text">
-                        <p>$8000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/AliceKellen/ElMapaDeLosAnhelos.png" alt="Portada Libro">
-                    <h3>EL MAPA DE LOS ANHELOS</h3>
-                    <div class="card__text">
-                        <p>$7500</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/StephenKing/Bajoeldomo.png" alt="Portada Libro">
-                    <h3>BAJO EL DOMO</h3>
-                    <div class="card__text">
-                        <p>$9000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/LeighBerdugo/ElReyMarcado.png" alt="Portada Libro">
-                    <h3>EL REY MARCADOS</h3>
-                    <div class="card__text">
-                        <p>$8000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/MarieLu/Legend.jpeg" alt="Portada Libro">
-                    <h3>LEGEND</h3>
-                    <div class="card__text">
-                        <p>$7500</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/LeighBerdugo/SeisDeCuervos.jpg" alt="Portada Libro">
-                    <h3>SEIS DE CUERVOS</h3>
-                    <div class="card__text">
-                        <p>$8000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/RickRiordan/PercyJackson.png" alt="Portada Libro">
-                    <h3>PERCY JACKSON</h3>
-                    <div class="card__text">
-                        <p>$9000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/AliceKellen/NosotrosEnLaLuna.jpg" alt="Portada Libro">
-                    <h3>NOSOTROS EN LA LUNA</h3>
-                    <div class="card__text">
-                        <p>$7500</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/StephenKing/It.png" alt="Portada Libro">
-                    <h3>IT (ESO)</h3>
-                    <div class="card__text">
-                        <p>$9000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/LeighBerdugo/ElLenguajeDeLasEspinas.jpg" alt="Portada Libro">
-                    <h3>EL LENGUAJE DE LAS ESPINAS</h3>
-                    <div class="card__text">
-                        <p>$8000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/RickRiordan/LaPiramideRoja.png" alt="Portada Libro">
-                    <h3>LA PIRÁMIDE ROJA</h3>
-                    <div class="card__text">
-                        <p>$7500</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/MarieLu/Warcross.jpg" alt="Portada Libro">
-                    <h3>WARCROSS</h3>
-                    <div class="card__text">
-                        <p>$8000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/AliceKellen/ElMapaDeLosAnhelos.png" alt="Portada Libro">
-                    <h3>EL MAPA DE LOS ANHELOS</h3>
-                    <div class="card__text">
-                        <p>$9000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/StephenKing/MrMercedes.jpg" alt="Portada Libro">
-                    <h3>MR. MERCEDES</h3>
-                    <div class="card__text">
-                        <p>$8000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/MarieLu/Skyhunter.png" alt="Portada Libro">
-                    <h3>SKYHUNTER</h3>
-                    <div class="card__text">
-                        <p>$7500</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="libroIMG" src="./img/Autores/StephenKing/Carrie.png" alt="Portada Libro">
-                    <h3>CARRIE</h3>
-                    <div class="card__text">
-                        <p>$9000</p>
-                        <button><img src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-                    </div>
-                </div>
-
             </div>
+
+            <button class="btn__load">Ver Más</button>
         </section>
 
         <!-- CONTACTO -->
@@ -365,5 +203,7 @@
         </div>
         <p>Hecho por <span>DiegoEAR</span></p>
     </footer>
+    <script src="data.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

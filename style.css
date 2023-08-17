@@ -329,16 +329,13 @@ main {
     cursor: pointer;
     padding: 5px;
     border-radius: 5px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #1F271B;    
 }
 
 .categoria:hover {
     background: #DCC7BE;
-}
-
-.categoria p {
-    font-size: 22px;
-    font-weight: 800;
-    color: #1F271B;    
 }
 
 .categorias__text img{
@@ -358,6 +355,10 @@ display: flex;
 gap: 20px;
 align-items: center;
 justify-content: center;
+}
+
+.active {
+    background: #0B4F6C;
 }
 
 .libros__cards__container {
@@ -414,6 +415,25 @@ justify-content: center;
     padding: 5px;
     border-radius: 1rem;
     cursor: pointer;
+}
+
+.btn__load {
+    color: #1F271B;
+    background-color: #CBB9A8;
+    cursor: pointer;
+    border: 1px solid #1F271B;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 35px;
+    border-radius: 10px;
+}
+
+.btn__load:hover {
+    background: #DCC7BE;
+}
+
+.hidden {
+    display: none;
 }
 
                     /* CONTACTO */
