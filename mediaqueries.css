@@ -22,11 +22,16 @@
 
     .menu__label {
         display: flex;
+        cursor: pointer;
     }
 
-    #menu__toggle:checked + .navbar__list {
+    .open__menu {
         display: flex;
     }
+
+    /* #menu__toggle:checked + .navbar__list {
+        display: flex;
+    } */
 
     .menu__label a{
         font-size: 28px;
@@ -134,8 +139,13 @@
 
             /* AUTORES */
 
+    .card__autor {
+        max-width: 250px;
+    }
+
     .autores__container {
         max-width: 95%;
+        background-color: transparent;
     }
 
             /* CONTACTO */

@@ -41,8 +41,7 @@ html {
     display: none;
 }
 
-#cart__toggle:checked ~ .overlay,
-#menu__toggle:checked ~ .overlay {
+.show__overlay {
     display: block;
 }
 

@@ -4,6 +4,14 @@ const showMoreBtn = document.querySelector('.btn__load');
 // Contenedor de categorias
 const categoriesContainer = document.querySelector('.categorias');
 const categorieslist = document.querySelectorAll('.categoria');
+// Carrito
+const cartBtn = document.querySelector('.cart__label');
+const cartMenu = document.querySelector('.cart');
+// Menu Hamburguesa
+const barsMenu = document.querySelector('.navbar__list');
+const menuBtn = document.querySelector('.menu__label');
+const overlay = document.querySelector('.overlay');
+
 
 // Funcion para renderizar una lista de productos
 const createProductTemplate = (product) => {
@@ -61,7 +69,7 @@ const applyFilter = ({ target }) => {
     renderProducts(appState.products[0]);
 };
 
-//Renderizar los productos fultrados
+//Renderizar los productos filtrados
 const renderFilterProducts = () => {
     const filteredProducts = productsData.filter(
         (product) => product.autor === appState.activeFilter
@@ -103,10 +111,50 @@ const setShowMoreVisibility = () => {
     showMoreBtn.classList.add('hidden')
 };
 
+//Toggle del cart y si esta abierto lo cierra
+//Muestra el overlay si no hay nada abierto y se esta abriendo el carrito
+const toggleCart = () => {
+    //cada vez que el user haga click, va a tener la clase open cart
+    cartMenu.classList.toggle('open__cart');
+    //chequear si el menu hamburguesa esta abierto, lo cierro y retorno
+    if (barsMenu.classList.contains('open__menu')) {
+        barsMenu.classList.remove('open__menu');
+        return; 
+    }
+    //si esta cerrado entro a la clase y la cambiamos con toggle
+    overlay.classList.toggle('show__overlay');
+};
+
+//funcion para mostrarr u oultar el menu hamburguesa y el overlay segun corresponda
+const toggleMenu = () => {
+    barsMenu.classList.toggle('open__menu');
+    if (cartMenu.classList.contains('open__cart')) {
+        cartMenu.classList.remove('open__cart');
+        return; // siu ya habia algo abierto no se togglea el overlay, por eso return
+    }
+    overlay.classList.toggle('show__overlay');
+};
+
+//funcion para errar el menu o carrito cuando el usuario scrolee
+const closeOnScroll = () => {
+    if (
+        !barsMenu.classList.contains('open__menu') &&
+        !cartMenu.classList.contains('open__cart')
+        ) {
+        return;
+    };
+    barsMenu.classList.remove('open__menu');
+    cartMenu.classList.remove('open__cart');
+    overlay.classList.remove('show__overlay');
+};
+
 // Funcion inicializadora
 const init = () => {
     renderProducts(appState.products[0]);
     showMoreBtn.addEventListener('click', showMoreProducts);
     categoriesContainer.addEventListener('click', applyFilter);
+    cartBtn.addEventListener('click', toggleCart);
+    menuBtn.addEventListener('click', toggleMenu);
+    window.addEventListener('scroll', closeOnScroll);
 };
 init();
