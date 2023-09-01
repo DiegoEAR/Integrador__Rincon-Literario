@@ -146,6 +146,17 @@ header img {
     cursor: pointer;
 }
 
+.disabled {
+    color: white;
+    cursor: not-allowed;
+    border: none;
+}
+.disabled:hover {
+    color: white;
+    cursor: not-allowed;
+    border: none;
+}
+
 
 
 /* #cart__toggle:checked + .cart {
@@ -183,6 +194,31 @@ header img {
 
 .cart__label {
     background-color: #DCC7BE;
+}
+
+.cart__total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add__modal {
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #CBB9A8;
+    background-color: #141a11;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.5s ease-out;
+    transform: translateY(200%);
+}
+
+.active__modal {
+    transform: translateY(0);
+    transition: all 0.5s ease-in;
 }
 
 main {
