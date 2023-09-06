@@ -31,7 +31,7 @@ const createProductTemplate = (product) => {
                 data-id=${id}
                 data-name=${name}
                 data-price=${price}
-                data-libroImg=${libroImg} class="btn__add" src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
+                data-img=${libroImg} class="btn__add" src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
         </div>
     </div>
     `
@@ -176,10 +176,10 @@ const renderCart = () => {
 
 //crear el template de un producto del carrito
 const createCartProductTemplate = (cartProduct) => {
-    const {id, name, price, libroImg, quantity } = cartProduct;
+    const {id, name, price, img, quantity } = cartProduct;
     return `
     <div class="cart__item">
-        <img src=${libroImg} loading='lazy' alt="Libro del carrito" />
+        <img src=${img} alt="Libro del carrito" />
         <div class="item__info">
             <h3>${name}</h3>
             <span> $${price}</span>
@@ -218,8 +218,8 @@ const addProduct = (e) => {
 
 //funcion desestructuradora
 const createProductData = (product) => {
-    const { id, name, price, libroImg } = product;
-    return { id, name, price, libroImg };
+    const { id, name, price, img } = product;
+    return { id, name, price, img };
 };
 
 //funion que comprueba si el producto ya fue agregado al carrito
