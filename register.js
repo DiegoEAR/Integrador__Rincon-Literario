@@ -1,9 +1,3 @@
-// Contenedor de produtos
-const productsContainer = document.querySelector('.libros__cards__container');
-const showMoreBtn = document.querySelector('.btn__load');
-// Contenedor de categorias
-const categoriesContainer = document.querySelector('.categorias');
-const categorieslist = document.querySelectorAll('.categoria');
 // Carrito
 const cartBtn = document.querySelector('.cart__label');
 const cartMenu = document.querySelector('.cart');
@@ -16,113 +10,8 @@ const total = document.querySelector('.total');
 const successModal = document.querySelector(".add__modal");
 const buyBtn = document.querySelector('.buy__btn');
 const deleteBtn = document.querySelector('.delete__btn');
-//Contacto
-const formContacto = document.querySelector('.contacto__form');
-//Newsletter
-const formNewsletter = document.querySelector('.contacto__newsletter__input');
-const inputNewsletter = document.querySelector('.newsletter__input');
-const buttonNewsletter = document.querySelector('.newsletter__button');
 
 
-
-//Renderizar una lista de productos
-const createProductTemplate = (product) => {
-    const {id, name, price, autor, libroImg } = product;
-    return `
-    <div class="card">
-        <img class="libroIMG" src=${libroImg} alt="Libro de la tienda" />
-        <h3>${name}</h3>
-        <div class="card__text">
-            <p>$${price}</p>
-            <button><img 
-                data-id=${id}
-                data-name=${name}
-                data-price=${price}
-                data-img=${libroImg} class="btn__add" src="./img/add-to-cart.png" alt="Agregar al carrito"></button>
-        </div>
-    </div>
-    `
-};
-
-//Funcion para averiguar si el indice actual renderizado de la lista de productos es igual al limite de productos
-const isLastIndexOf = () => {
-    return appState.currentProductsIndex === appState.productsLimit-1;
-};
-
-//Funcion para mostrar mas productos ante el click del usuario en el boton 'ver mas'
-const showMoreProducts = () => {
-    appState.currentProductsIndex += 1;
-    let {products, currentProductsIndex} = appState;
-    renderProducts(products[currentProductsIndex]);
-    if (isLastIndexOf()) {
-        showMoreBtn.classList.add('hidden');
-    };
-};
-
-//Funcion que me permite renderizar nuestra app sin necesidad de escuchar un evento
-const renderProducts = (productsList) => {
-    productsContainer.innerHTML += productsList
-    .map(createProductTemplate)
-    .join('');
-};
-
-//Funcion para aplicar el filtro cuando se clickea el boton de categoria, si el boton no es de categoria o esta activo, no hace nada
-const applyFilter = ({ target }) => {
-    if (!isInactiveFilterBtn(target)) return;
-    changeFilterState(target);
-    productsContainer.innerHTML = '';
-    if (appState.activeFilter) {
-        renderFilterProducts();
-        appState.currentProductsIndex = 0;
-        return;
-    };
-    renderProducts(appState.products[0]);
-};
-
-//Renderizar los productos filtrados
-const renderFilterProducts = () => {
-    const filteredProducts = productsData.filter(
-        (product) => product.autor === appState.activeFilter
-    );
-    renderProducts(filteredProducts);
-}; 
-
-const isInactiveFilterBtn = (element) => {
-    return (
-        element.classList.contains('categoria') &&
-        !element.classList.contains('active')
-    );
-};
-
-//Cambio el estado del filtro
-const changeFilterState = (btn) => {
-    appState.activeFilter = btn.dataset.autor;
-    changeBtnActiveState(appState.activeFilter);
-};
-
-//Funcion para cambiar el estado de los botones de categorias
-const changeBtnActiveState = (selectedCategory) => {
-    const categorias = [... categorieslist];
-    categorias.forEach((categoryBtn) => {
-        if (categoryBtn.dataset.autor !== selectedCategory) {
-            categoryBtn.classList.remove ('active');
-            return;
-        }
-        categoryBtn.classList.add('active');
-    })
-};
-
-// Funcion para mostrar u ocultar el boton de ver mas segun corresponda
-const setShowMoreVisibility = () => {
-    if (!appState.activeFilter) {
-        showMoreBtn.classList.remove('hidden')
-        return
-    }
-    showMoreBtn.classList.add('hidden')
-};
-
-//Toggle del cart y si esta abierto lo cierra
-//Muestra el overlay si no hay nada abierto y se esta abriendo el carrito
 const toggleCart = () => {
     cartMenu.classList.toggle('open__cart');
     if (barsMenu.classList.contains('open__menu')) {
@@ -353,28 +242,17 @@ const deleteCart = () => {
     );
 };
 
-
-const validateNewsletter = (e) => {
-    e.preventDefault();
-};
-
-// Funcion inicializadora
 const init = () => {
-    renderProducts(appState.products[0]);
-    showMoreBtn.addEventListener('click', showMoreProducts);
-    categoriesContainer.addEventListener('click', applyFilter);
     cartBtn.addEventListener('click', toggleCart);
     menuBtn.addEventListener('click', toggleMenu);
     window.addEventListener('scroll', closeOnScroll);
     overlay.addEventListener('click', closeOnOverlayClick);
     document.addEventListener('DOMContentLoaded', renderCart);
     document.addEventListener('DOMContentLoaded', showCartTotal);
-    productsContainer.addEventListener('click', addProduct);
     productsCart.addEventListener('click', handleQuantity);
     buyBtn.addEventListener('click', completeBuy);
     deleteBtn.addEventListener('click', deleteCart);
     disableBtn(buyBtn);
     disableBtn(deleteBtn);
-    formNewsletter.addEventListener('submit', validateNewsletter);
 };
 init();
