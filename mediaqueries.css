@@ -29,10 +29,6 @@
         display: flex;
     }
 
-    /* #menu__toggle:checked + .navbar__list {
-        display: flex;
-    } */
-
     .menu__label a{
         font-size: 28px;
         font-weight: 800;
@@ -128,6 +124,14 @@
 @media (max-width: 466px) {
             /* HERO */
 
+    .categorias__text {
+        gap: 0px;
+    }
+
+    .categorias__text img {
+        max-width: 50px;
+    }
+
     .hero__containter__text h1 {
         font-size: 38px;
     }
@@ -139,8 +143,17 @@
 
             /* AUTORES */
 
+    #libros{
+        max-width: 280px;
+    }
+
+    #autores{
+        max-width: 280px;
+    }
+
     .card__autor {
-        max-width: 250px;
+        min-width: 260px;
+        max-width: 280px;
     }
 
     .autores__container {
@@ -151,7 +164,24 @@
             /* CONTACTO */
 
     .contacto__grid {
-        width: 95%;
+        /* width: 95%; */
+        background-color: transparent;
+    }
+
+    .contacto__newsletter__input {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacto__form, .contacto__newsletter, .contacto__redes {
+        min-width: 260px;
+        max-width: 280px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .libros__cards__container {
+        max-width: 260px;
     }
 
             /* FOOTER */
@@ -160,5 +190,4 @@
         flex-direction: column;
         gap: 1px;
     }
-
 }

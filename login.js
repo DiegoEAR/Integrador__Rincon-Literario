@@ -10,6 +10,11 @@ const total = document.querySelector('.total');
 const successModal = document.querySelector(".add__modal");
 const buyBtn = document.querySelector('.buy__btn');
 const deleteBtn = document.querySelector('.delete__btn');
+//Login
+const loginForm = document.querySelector('.login__form');
+const emailInput = document.getElementById('email');
+const passInput = document.getElementById('contraseña');
+const errorMessage = document.getElementById('form__error');
 
 
 const toggleCart = () => {
@@ -242,7 +247,68 @@ const deleteCart = () => {
     );
 };
 
+//Auxiliares Login
+const users = JSON.parse(localStorage.getItem('users')) || [];
+
+const saveToSessionStorage = (user) => {
+    sessionStorage.setItem('activeUser', JSON.stringify(user));
+};
+
+const isEmpty = (input) => {
+    return !input.value.trim().length;
+};
+
+const isExistingEmail = (input) => {
+    return users.some((user) => user.email === input.value.trim());
+};
+
+const isMatchingPass = (input) => {
+    const user = users.find((user) => user.email === emailInput.value.trim());
+    return user.password === input.value.trim();
+};
+
+const showError = (message) => {
+    errorMessage.textContent = message;
+};
+
+const isValidAccount = () => {
+    let valid = false;
+    if (isEmpty(emailInput)) {
+        showError('Por favor, complete los campos requeridos');
+        return;
+    };
+    if (!isExistingEmail(emailInput)) {
+        showError('El email ingresado es inválido');
+        return;
+    };
+    if (isEmpty(passInput)) {
+        showError('Por favor, complete los campos requeridos');
+        return;
+    };
+    if (!isMatchingPass(passInput)) {
+        showError('Los datos ingresados son incorrectos');
+        loginForm.reset();
+        return;
+    };
+    alert('Bienvenido nuevamente, ya estás en línea');
+    valid = true;
+    errorMessage.textContent = '';
+    loginForm.reset;
+    return valid;
+};
+
+//Login Form
+const login = (e) => {
+    e.preventDefault();
+    if (isValidAccount()) {
+        const user = users.find((user) => user.email === emailInput.value.trim());
+        saveToSessionStorage(user);
+        window.location.href = './index.html'
+    };
+};
+
 const init = () => {
+    //Menu-Cart
     cartBtn.addEventListener('click', toggleCart);
     menuBtn.addEventListener('click', toggleMenu);
     window.addEventListener('scroll', closeOnScroll);
@@ -254,5 +320,7 @@ const init = () => {
     deleteBtn.addEventListener('click', deleteCart);
     disableBtn(buyBtn);
     disableBtn(deleteBtn);
+    //Login
+    loginForm.addEventListener('submit', login);
 };
 init();

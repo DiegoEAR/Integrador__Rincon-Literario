@@ -53,16 +53,26 @@
             <div class="register__container">
                 <h2>Crear Cuenta</h2>
                 <form class="register__form">
-                    <label for="nombre">Nombre y Apellido:</label>
-                    <input type="text" placeholder="   Juan Martinez" id="nombre">
-                    <label for="email">Email:</label>
-                    <input type="text" placeholder="   example@gmail.com" id="email">
-                    <label for="telefono">Teléfono:</label>
-                    <input type="text" placeholder="   1123445567" id="telefono">
-                    <label for="contraseña">Contraseña:</label>
-                    <input type="password" id="contraseña">
-                    <label for="confirmar">Confirmar Contraseña:</label>
-                    <input type="password" id="confirmar">
+                    <div class="register__form">
+                        <label for="nombre">Nombre y Apellido:</label>
+                        <input type="text" placeholder="Juan Martinez" id="nombre" autocomplete="off">
+                        <small></small>
+                    </div>
+                    <div class="register__form">
+                        <label for="email">Email:</label>
+                        <input type="text" placeholder="example@gmail.com" id="email" autocomplete="off">
+                        <small></small>
+                    </div>
+                    <div class="register__form">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="number" placeholder="1123445567" id="telefono" autocomplete="off">
+                        <small></small>
+                    </div>
+                    <div class="register__form">
+                        <label for="contraseña">Contraseña:</label>
+                        <input type="password" id="contraseña" placeholder="***********" autocomplete="off">
+                        <small></small>
+                    </div>
                     <button>Crear Cuenta</button>
                 </form>
                 <div class="unlogin">

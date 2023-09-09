@@ -53,17 +53,22 @@
             <div class="login__container">
                 <h2>Inicia Sesión</h2>
                 <form class="login__form">
-                    <label for="email">Email:</label>
-                    <input type="text" placeholder="   example@gmail.com" id="email">
-                    <label for="contraseña">Contraseña:</label>
-                    <input type="password" id="contraseña">
-                    <a href="#">¿Olvidate tu contraseña?</a>
-                    <button>Iniciar Sesión</button>
-                    <div class="unregistered">
-                        <p>¿No tenés cuenta?</p>
-                        <a href="./register.html">Crear Cuenta</a>
+                    <div class="register__form">
+                        <label for="email">Email:</label>
+                        <input type="text" placeholder="example@gmail.com" id="email" autocomplete="off">
                     </div>
+                    <div class="register__form">
+                        <label for="contraseña">Contraseña:</label>
+                        <input type="password" id="contraseña" placeholder="***********" autocomplete="off">
+                    </div>
+                    <a href="#">¿Olvidate tu contraseña?</a>
+                    <small id="form__error"></small>
+                    <button>Iniciar Sesión</button>
                 </form>
+                <div class="unregistered">
+                    <p>¿No tenés cuenta?</p>
+                    <a href="./register.html">Crear Cuenta</a>
+                </div>
             </div>
         </section>
     </main>

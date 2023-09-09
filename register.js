@@ -10,6 +10,12 @@ const total = document.querySelector('.total');
 const successModal = document.querySelector(".add__modal");
 const buyBtn = document.querySelector('.buy__btn');
 const deleteBtn = document.querySelector('.delete__btn');
+//Register
+const registerForm = document.querySelector('.register__form');
+const nameInput = document.getElementById('nombre');
+const emailInput = document.getElementById('email');
+const phoneInput = document.getElementById('telefono');
+const passInput = document.getElementById('contraseña');
 
 
 const toggleCart = () => {
@@ -157,7 +163,7 @@ const disableBtn = (btn) => {
 
 //funcion de actualizacion del carro
 const updateCartState = () => {
-    //guardar arrito en LS
+    //guardar carrito en LS
     saveCart();
     //renderizo el carro
     renderCart();
@@ -242,7 +248,153 @@ const deleteCart = () => {
     );
 };
 
+//Auxiliares Register
+const users = JSON.parse(localStorage.getItem('users')) || [];
+
+const saveToLocalStorage = () => {
+    localStorage.setItem('users', JSON.stringify(users));
+};
+
+const isBetween = (input, min, max) => {
+    return input.value.length >= min && input.value.length < max;
+};
+
+const isEmpty = (input) => {
+    return !input.value.trim().length;
+};
+
+const isEmailValid = (input) => {
+    const re = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,4})+$/;
+    return re.test(input.value.trim());
+};
+
+const isExistingEmail = (input) => {
+    return users.some((user) => user.email === input.value.trim());
+};
+
+const isPassSecure = (input) => {
+    const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    return re.test(input.value.trim());
+};
+
+const isPhoneValid = (input) => {
+    const re = /^[0-9]{10}$/;
+    return re.test(input.value.trim());
+};
+
+const showError = (input, message) => {
+    const registerForm = input.parentElement;
+    registerForm.classList.remove('success');
+    registerForm.classList.add('error');
+    const error = registerForm.querySelector('small');
+    error.style.display = 'block';
+    error.textContent = message;
+};
+
+const showSuccess = (input, message) => {
+    const registerForm = input.parentElement;
+    registerForm.classList.remove('error');
+    registerForm.classList.add('success');
+    const error = registerForm.querySelector('small');
+    error.textContent = '';
+};
+
+//Validacion Inputs
+const checkTextInput = (input) => {
+    let valid = false;
+    const minCharacters = 3;
+    const maxCharacters = 25;
+    if(isEmpty(input)){
+        showError(input, `Este campo es obligatorio`);
+        return;
+    };
+    if(!isBetween(input, minCharacters, maxCharacters)){
+        showError(input, `Debe tener entre ${minCharacters}  y ${maxCharacters}  caracteres`);
+        return;
+    };
+    showSuccess(input);
+    valid = true;
+    return valid;
+};
+
+const checkEmail = (input) => {
+    let valid = false;
+    if (isEmpty(input)){
+        showError(input, 'El email es obligatorio');
+        return;
+    };
+    if (!isEmailValid(input)) {
+        showError(input, 'El email no es válido');
+        return;
+    };
+    if (isExistingEmail(input)) {
+        showError(input, 'El email ya se encuentra en un usuario registrado');
+        return;
+    };
+    showSuccess(input);
+    valid = true;
+    return valid;
+};
+
+const checkPhone = (input) => {
+    let valid = false;
+    if (isEmpty(input)) {
+        showError(input, 'La teléfono es obligatorio');
+        return;
+    };
+    if (!isPhoneValid(input)) {
+        showError(input, 'El teléfono no es valido');
+        return;
+    };
+    showSuccess(input);
+    valid = true;
+    return valid;
+};
+
+const checkPassword = (input) => {
+    let valid = false;
+    if (isEmpty(input)) {
+        showError(input, 'La cotraseña es obligatoria');
+        return;
+    };
+    if (!isPassSecure(input)) {
+        showError(input, 'La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número');
+        return;
+    };
+    showSuccess(input);
+    valid = true;
+    return valid;
+};
+
+//Register form
+const validateForm = (e) => {
+    e.preventDefault();
+    let isNameValid = checkTextInput(nameInput);
+    let isEmailValid = checkEmail(emailInput);
+    let isPhoneValid = checkPhone(phoneInput);
+    let isPasswordValid = checkPassword(passInput);
+    let isValidForm = 
+    isNameValid &&
+    isEmailValid &&
+    isPhoneValid &&
+    isPasswordValid;
+
+    if (isValidForm) {
+        users.push({
+            name: nameInput.value,
+            email: emailInput.value,
+            phone: phoneInput.value,
+            password: passInput.value
+        });
+        saveToLocalStorage(users);
+        alert('Te has registrado con éxito');
+        window.location.href = './login.html';
+    };
+};
+
+
 const init = () => {
+    //Menu-Cart
     cartBtn.addEventListener('click', toggleCart);
     menuBtn.addEventListener('click', toggleMenu);
     window.addEventListener('scroll', closeOnScroll);
@@ -254,5 +406,11 @@ const init = () => {
     deleteBtn.addEventListener('click', deleteCart);
     disableBtn(buyBtn);
     disableBtn(deleteBtn);
+    //Register
+    registerForm.addEventListener('submit', validateForm);
+    nameInput.addEventListener('input', () => checkTextInput(nameInput));
+    emailInput.addEventListener('input', () => checkEmail(emailInput));
+    phoneInput.addEventListener('input', () => checkPhone(phoneInput));
+    passInput.addEventListener('input', () => checkPassword(passInput));
 };
 init();
