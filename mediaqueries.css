@@ -161,6 +161,10 @@
         background-color: transparent;
     }
 
+    .card__autor__text h3{
+        font-size: 30px;
+    }
+
             /* CONTACTO */
 
     .contacto__grid {

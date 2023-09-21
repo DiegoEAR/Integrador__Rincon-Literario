@@ -72,8 +72,8 @@
                 <h2>Autores</h2>
                 <img src="./img/librosIMG.png" alt="">
             </div>
-                <div class="autores__container">
-                    <div class="card__autor">
+            <div class="autores__container">
+                <div class="card__autor">
                         <img class="autorIMG" src="./img/Autores/StephenKing/StephenKing.png" alt="Foto Autor">
                         <div class="card__autor__text">
                             <h3>Stephen King</h3>
@@ -160,7 +160,10 @@
                     <h4>¿Suscribirse a nuestro Newsletter?</h4>
                     <p> Recibe las últimas novedades literarias, recomendaciones de libros, entrevistas con autores, promociones especiales y noticias sobre eventos literarios.</p>
                     <form class="contacto__newsletter__input">
-                        <input class="newsletter__input" type="email"  placeholder="   example@gmail.com">
+                        <div class="contact__input">
+                            <input class="newsletter__input" type="email"  placeholder="   example@gmail.com">
+                            <small></small>
+                        </div>
                         <button class="newsletter__button">Suscribirse!</button>
                     </form>
                 </div>
@@ -174,14 +177,21 @@
                 </div>
                 <form class="contacto__form">
                     <h4>Contáctanos</h4>
-                    <label class="label_1" for="nombre">Nombre completo:</label>
-                    <input class="input_1" type="text" placeholder="   Ingrese su nombre" id="nombre">
-                    
-                    <label class="label_1" for="numero">Número de teléfono:</label>
-                    <input class="input_1" type="number" id="numero" placeholder="   1124134657">
-                    
-                    <label class="label_1" for="mail">Email:</label>
-                    <input class="input_1" type="email" id="mail" placeholder="   example@gmail.com">
+                    <div class="contact__input">
+                        <label class="label_1" for="nombre">Nombre completo:</label>
+                        <input class="input_1" type="text" placeholder="   Ingrese su nombre" id="nombre">
+                        <small></small>
+                    </div>
+                    <div class="contact__input">
+                        <label class="label_1" for="numero">Número de teléfono:</label>
+                        <input class="input_1" type="number" id="numero" placeholder="   1124134657">
+                        <small></small>
+                    </div>
+                    <div class="contact__input">
+                        <label class="label_1" for="mail">Email:</label>
+                        <input class="input_1" type="email" id="mail" placeholder="   example@gmail.com">
+                        <small></small>
+                    </div>
                     
                     <textarea class="input_2" id="notas" cols="30" rows="10" placeholder="   Notas adicionales de contacto..."></textarea>
                     
@@ -208,5 +218,6 @@
     <div class="add__modal"></div>
     <script src="data.js"></script>
     <script src="index.js"></script>
+    <script src="contact.js"></script>
 </body>
 </html>

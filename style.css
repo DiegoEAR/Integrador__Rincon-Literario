@@ -530,7 +530,7 @@ justify-content: center;
 }
 
 .contacto__newsletter__input input {
-    width: 200px;
+    width: 100%;
     height: 30px;
     border-radius: 1rem;
     font-size: 16px;
@@ -763,15 +763,18 @@ body {
 }
 
 .login__form.success input,
-.register__form.success input {
+.register__form.success input,
+.contact__input.success input {
     border: 1px solid #489248;
 }
 
-.register__form.error input {
+.register__form.error input,
+.contact__input.error input {
     border: 1px solid #f61f1f;
 }
 
-.register__form small {
+.register__form small,
+.contact__input small {
     color: #f61f1f;
     max-width: 300px;
     margin-left: 10px;

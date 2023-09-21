@@ -16,13 +16,6 @@ const total = document.querySelector('.total');
 const successModal = document.querySelector(".add__modal");
 const buyBtn = document.querySelector('.buy__btn');
 const deleteBtn = document.querySelector('.delete__btn');
-//Contacto
-const formContacto = document.querySelector('.contacto__form');
-//Newsletter
-const formNewsletter = document.querySelector('.contacto__newsletter__input');
-const inputNewsletter = document.querySelector('.newsletter__input');
-const buttonNewsletter = document.querySelector('.newsletter__button');
-
 
 
 //Renderizar una lista de productos
@@ -354,10 +347,6 @@ const deleteCart = () => {
 };
 
 
-const validateNewsletter = (e) => {
-    e.preventDefault();
-};
-
 // Funcion inicializadora
 const init = () => {
     renderProducts(appState.products[0]);
@@ -375,6 +364,5 @@ const init = () => {
     deleteBtn.addEventListener('click', deleteCart);
     disableBtn(buyBtn);
     disableBtn(deleteBtn);
-    formNewsletter.addEventListener('submit', validateNewsletter);
 };
 init();

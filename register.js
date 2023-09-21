@@ -17,7 +17,6 @@ const emailInput = document.getElementById('email');
 const phoneInput = document.getElementById('telefono');
 const passInput = document.getElementById('contraseña');
 
-
 const toggleCart = () => {
     cartMenu.classList.toggle('open__cart');
     if (barsMenu.classList.contains('open__menu')) {
